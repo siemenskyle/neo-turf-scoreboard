@@ -173,7 +173,7 @@ function init(){
 				$('#p1UpNum').fadeTo(0, 0);
 				$('#p2UpNum').fadeTo(0, 0);
 			} else {
-				$('#p1Dormie').fadeTo(0, 0);
+				$('#p2Dormie').fadeTo(0, 0);
 				$('#square').fadeTo(0, 0);
 				$('#p1Up').fadeTo(0, 0);
 				$('#p2Up').fadeTo(0, 1);
@@ -182,6 +182,12 @@ function init(){
 			}
 		} else {
 			// All Square
+			if (lastHole == 18) {
+				// Sudden death!
+				$('#square').attr('src', 'img/sudden-death.png');
+			} else {
+				$('#square').attr('src', 'img/square.png');
+			}
 			$('#square').fadeTo(0, 1);
 			$('#p1Up').fadeTo(0, 0);
 			$('#p2Up').fadeTo(0, 0);
