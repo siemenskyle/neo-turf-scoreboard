@@ -22,6 +22,6 @@ How to:
 Future Work Ideas
 -----------------
 Feel free to request future ideas in Issues. Some ideas I currently have:
-* Sudden death indicator
+* Win indicators
 * Stroke play scorecard (1 player and 2 player)
 * Animations
