@@ -79,5 +79,47 @@
    <comboItem>USA</comboItem>
    <comboItem>AUSTRALIA</comboItem>
   </comboBox>
+
+  <label x="25" y="105" width="340" height="13">STROKE PLAY</label>
+  
+  <label x="10" y="159" width="46" height="13">Front 9</label>
+  <label x="70" y="139" width="15" height="13">1</label>
+  <spinBox id="stroke.hole1" x="60" y="154" width="42" height="25"/>
+  <label x="120" y="139" width="15" height="13">2</label>
+  <spinBox id="stroke.hole2" x="110" y="154" width="42" height="25"/>
+  <label x="170" y="139" width="15" height="13">3</label>
+  <spinBox id="stroke.hole3" x="160" y="154" width="42" height="25"/>
+  <label x="220" y="139" width="15" height="13">4</label>
+  <spinBox id="stroke.hole4" x="210" y="154" width="42" height="25"/>
+  <label x="270" y="139" width="15" height="13">5</label>
+  <spinBox id="stroke.hole5" x="260" y="154" width="42" height="25"/>
+  <label x="320" y="139" width="15" height="13">6</label>
+  <spinBox id="stroke.hole6" x="310" y="154" width="42" height="25"/>
+  <label x="370" y="139" width="15" height="13">7</label>
+  <spinBox id="stroke.hole7" x="360" y="154" width="42" height="25"/>
+  <label x="420" y="139" width="15" height="13">8</label>
+  <spinBox id="stroke.hole8" x="410" y="154" width="42" height="25"/>
+  <label x="470" y="139" width="15" height="13">9</label>
+  <spinBox id="stroke.hole9" x="460" y="154" width="42" height="25"/>
+  
+  <label x="10" y="219" width="46" height="13">Back 9</label>
+  <label x="70" y="199" width="15" height="13">10</label>
+  <spinBox id="stroke.hole10" x="60" y="214" width="42" height="25"/>
+  <label x="120" y="199" width="15" height="13">11</label>
+  <spinBox id="stroke.hole11" x="110" y="214" width="42" height="25"/>
+  <label x="170" y="199" width="15" height="13">12</label>
+  <spinBox id="stroke.hole12" x="160" y="214" width="42" height="25"/>
+  <label x="220" y="199" width="15" height="13">13</label>
+  <spinBox id="stroke.hole13" x="210" y="214" width="42" height="25"/>
+  <label x="270" y="199" width="15" height="13">14</label>
+  <spinBox id="stroke.hole14" x="260" y="214" width="42" height="25"/>
+  <label x="320" y="199" width="15" height="13">15</label>
+  <spinBox id="stroke.hole15" x="310" y="214" width="42" height="25"/>
+  <label x="370" y="199" width="15" height="13">16</label>
+  <spinBox id="stroke.hole16" x="360" y="214" width="42" height="25"/>
+  <label x="420" y="199" width="15" height="13">17</label>
+  <spinBox id="stroke.hole17" x="410" y="214" width="42" height="25"/>
+  <label x="470" y="199" width="15" height="13">18</label>
+  <spinBox id="stroke.hole18" x="460" y="214" width="42" height="25"/>
  </tab>
 </layout>
