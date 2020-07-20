@@ -1,0 +1,74 @@
+<!DOCTYPE StreamControlLayout>
+<layout width="540" height="380" tabbed="1">
+ <tab name="Match Play">
+  <label x="10" y="14" width="46" height="13">Player 1</label>
+  <lineEdit id="p1Name" x="60" y="10" width="170" height="20" dataSet="players.csv" dataField="1" />
+  <comboBox id="p1Char" dataSet="players.csv" dataField="2" master="p1Name" x="240" y="10" width="150" height="20">
+   <comboItem selected="true" value="">Character</comboItem>
+   <comboItem>YOUNGHERO</comboItem>
+   <comboItem>TECHNITIAN</comboItem>
+   <comboItem>VETERAN</comboItem>
+   <comboItem>SHOTMAKER</comboItem>
+   <comboItem>POWERGOLFER</comboItem>
+   <comboItem>PUTTMASTER</comboItem>
+  </comboBox>
+  
+  <label x="10" y="44" width="46" height="13">Player 2</label>
+  <lineEdit id="p2Name" x="60" y="40" width="170" height="20" dataSet="players.csv" dataField="1"  />
+  <comboBox id="p2Char" dataSet="players.csv" dataField="2" master="p2Name" x="240" y="38" width="150" height="20">
+   <comboItem selected="true" value="">Character</comboItem>
+   <comboItem>YOUNGHERO</comboItem>
+   <comboItem>TECHNITIAN</comboItem>
+   <comboItem>VETERAN</comboItem>
+   <comboItem>SHOTMAKER</comboItem>
+   <comboItem>POWERGOLFER</comboItem>
+   <comboItem>PUTTMASTER</comboItem>
+  </comboBox>
+  
+  
+  
+  <label x="25" y="105" width="340" height="13">MATCH PLAY -- "1" is P1 Win, "2" is P2 Win, "3" is Draw</label>
+  
+  <label x="10" y="159" width="46" height="13">Front 9</label>
+  <label x="70" y="139" width="15" height="13">1</label>
+  <spinBox id="hole1" x="60" y="154" maximum="3" width="42" height="25"/>
+  <label x="120" y="139" width="15" height="13">2</label>
+  <spinBox id="hole2" x="110" y="154" maximum="3" width="42" height="25"/>
+  <label x="170" y="139" width="15" height="13">3</label>
+  <spinBox id="hole3" x="160" y="154" maximum="3" width="42" height="25"/>
+  <label x="220" y="139" width="15" height="13">4</label>
+  <spinBox id="hole4" x="210" y="154" maximum="3" width="42" height="25"/>
+  <label x="270" y="139" width="15" height="13">5</label>
+  <spinBox id="hole5" x="260" y="154" maximum="3" width="42" height="25"/>
+  <label x="320" y="139" width="15" height="13">6</label>
+  <spinBox id="hole6" x="310" y="154" maximum="3" width="42" height="25"/>
+  <label x="370" y="139" width="15" height="13">7</label>
+  <spinBox id="hole7" x="360" y="154" maximum="3" width="42" height="25"/>
+  <label x="420" y="139" width="15" height="13">8</label>
+  <spinBox id="hole8" x="410" y="154" maximum="3" width="42" height="25"/>
+  <label x="470" y="139" width="15" height="13">9</label>
+  <spinBox id="hole9" x="460" y="154" maximum="3" width="42" height="25"/>
+  
+  <label x="10" y="219" width="46" height="13">Back 9</label>
+  <label x="70" y="199" width="15" height="13">10</label>
+  <spinBox id="hole10" x="60" y="214" maximum="3" width="42" height="25"/>
+  <label x="120" y="199" width="15" height="13">11</label>
+  <spinBox id="hole11" x="110" y="214" maximum="3" width="42" height="25"/>
+  <label x="170" y="199" width="15" height="13">12</label>
+  <spinBox id="hole12" x="160" y="214" maximum="3" width="42" height="25"/>
+  <label x="220" y="199" width="15" height="13">13</label>
+  <spinBox id="hole13" x="210" y="214" maximum="3" width="42" height="25"/>
+  <label x="270" y="199" width="15" height="13">14</label>
+  <spinBox id="hole14" x="260" y="214" maximum="3" width="42" height="25"/>
+  <label x="320" y="199" width="15" height="13">15</label>
+  <spinBox id="hole15" x="310" y="214" maximum="3" width="42" height="25"/>
+  <label x="370" y="199" width="15" height="13">16</label>
+  <spinBox id="hole16" x="360" y="214" maximum="3" width="42" height="25"/>
+  <label x="420" y="199" width="15" height="13">17</label>
+  <spinBox id="hole17" x="410" y="214" maximum="3" width="42" height="25"/>
+  <label x="470" y="199" width="15" height="13">18</label>
+  <spinBox id="hole18" x="460" y="214" maximum="3" width="42" height="25"/>
+  
+  <button type="reset" x="200" y="260" width="120" height="23" tooltip="Clear Match Info" id="reset2" reset="p1Name,p1Char,p2Name,p2Char,hole1,hole2,hole3,hole4,hole5,hole6,hole7,hole8,hole9,hole10,hole11,hole12,hole13,hole14,hole15,hole16,hole17,hole18">Clear</button>
+ </tab>
+</layout>
