@@ -1,0 +1,101 @@
+@font-face {
+    src: url('../font/EndlessBossBattleRegular-v7Ey.ttf');
+    font-family: "EndlessBossBattle";
+}
+
+body {
+    overflow: hidden;
+    background: transparent;
+    padding: 0px;
+    margin: 0px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: -3px 2px black;
+    -webkit-text-stroke: 2px black;
+    letter-spacing: 0.1em;
+    font-family: 'EndlessBossBattle';
+}
+
+.wrappers {
+    position: absolute;
+    margin-top: 10px;
+    width: 275px;
+    height: 42px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 28px;
+    background: url(../img/namebar.png);
+    filter: drop-shadow(-1px 1px 1px gray);
+    -webkit-text-stroke: 1px black;
+}
+
+.stats {
+    position: inherit;
+    left: 0px;
+    width: 100%;
+    top: 2px;
+}
+
+#currentScoreWrap {
+    right: 50%;
+    margin-right: 3px;
+}
+
+#paceWrap {
+    left: 50%;
+    margin-left: 3px;
+}
+
+#scorecardWrapper {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+#scorecard {
+    width: 575px;
+    height: 437px;
+    margin-left: auto;
+    margin-right: auto;
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	position:relative;
+}
+	#scorecard.AUSTRALIA {
+		background-image:url(../img/AUSTRALIA.png);
+	}
+	#scorecard.JAPAN {
+		background-image:url(../img/JAPAN.png);
+	}
+	#scorecard.USA {
+		background-image:url(../img/USA.png);
+	}
+	#scorecard.GERMANY {
+		background-image:url(../img/GERMANY.png);
+		
+	}
+
+.score {
+    position: absolute;
+	font-size:35px;
+	width: 40px;
+	text-align:center;
+}
+#frontNine, #backNine{width:70px;}
+.great {
+	color:#f7bd1e;
+}
+.good {
+	color:#ffff63;
+}
+.poor {
+	color:#9cdeff;
+}
+.bad {
+	color:#5a96e7;
+}
+
+.hide {
+    display: none;
+}

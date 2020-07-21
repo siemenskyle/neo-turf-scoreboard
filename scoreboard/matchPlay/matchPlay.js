@@ -3,7 +3,7 @@ window.onload = init;
 function init(){
 	
 	var xhr = new XMLHttpRequest(); //AJAX data request sent to server(in this case server being local json file)
-	var streamJSON = '../streamcontrol.json'; //specifies path for streamcontrol output json
+	var streamJSON = '../../streamcontrol.json'; //specifies path for streamcontrol output json
 	var scObj; //variable to hold data extracted from parsed json
 	var cBust = 0; //variable to hold cache busting value
 	
@@ -28,13 +28,13 @@ function init(){
 	}
 	
 	function scoreboard(){
-		var p1Name = scObj['p1Name']; 
-		var p2Name = scObj['p2Name'];
-		var p1Char = scObj['p1Char'];
-		var p2Char = scObj['p2Char'];
+		var p1Name = scObj['match.p1Name']; 
+		var p2Name = scObj['match.p2Name'];
+		var p1Char = scObj['match.p1Char'];
+		var p2Char = scObj['match.p2Char'];
 		var scores = [];
 		for (var i = 1; i <= 18; i++) {
-			scores.push(scObj['hole'+i]);
+			scores.push(scObj['match.hole'+i]);
 		}
 		
 		if($('#p1Name').text() != p1Name) {
@@ -59,17 +59,17 @@ function init(){
 			}
 		}
 		
-		var p1CharLink = 'img/' + p1Char + '.gif';
+		var p1CharLink = '../img/' + p1Char + '.gif';
 		if (!p1Char) {
-			var p1CharLink = 'img/e.png';
+			var p1CharLink = '../img/e.png';
 		} 
 		if ($('#p1Portrait').attr('src') != p1CharLink) {
 			$('#p1Portrait').attr('src', p1CharLink);
 		}
 		
-		var p2CharLink = 'img/' + p2Char + '.gif';
+		var p2CharLink = '../img/' + p2Char + '.gif';
 		if (!p2Char) {
-			var p2CharLink = 'img/e.png';
+			var p2CharLink = '../img/e.png';
 		} 
 		if ($('#p2Portrait').attr('src') != p2CharLink) {
 			$('#p2Portrait').attr('src', p2CharLink);
@@ -90,25 +90,25 @@ function init(){
 			var hole = i+1;
 			switch (scores[i]) {
 				case '1':
-					$('#h'+ hole +'p1').attr('src', 'img/W.png');
-					$('#h'+ hole +'p2').attr('src', 'img/L.png');
+					$('#h'+ hole +'p1').attr('src', '../img/W.png');
+					$('#h'+ hole +'p2').attr('src', '../img/L.png');
 					up += 1;
 					lastHole = hole;
 					break;
 				case '2':
-					$('#h'+ hole +'p1').attr('src', 'img/L.png');
-					$('#h'+ hole +'p2').attr('src', 'img/W.png');
+					$('#h'+ hole +'p1').attr('src', '../img/L.png');
+					$('#h'+ hole +'p2').attr('src', '../img/W.png');
 					up -= 1;
 					lastHole = hole;
 					break;
 				case '3':
-					$('#h'+ hole +'p1').attr('src', 'img/T.png');
-					$('#h'+ hole +'p2').attr('src', 'img/T.png');
+					$('#h'+ hole +'p1').attr('src', '../img/T.png');
+					$('#h'+ hole +'p2').attr('src', '../img/T.png');
 					lastHole = hole;
 					break;
 				default:
-					$('#h'+ hole +'p1').attr('src', 'img/e.png');
-					$('#h'+ hole +'p2').attr('src', 'img/e.png');
+					$('#h'+ hole +'p1').attr('src', '../img/e.png');
+					$('#h'+ hole +'p2').attr('src', '../img/e.png');
 			}
 		}
 		setUp(up, lastHole);
@@ -117,14 +117,14 @@ function init(){
 	function setUp(up, lastHole) {
 		if (up > 0) {
 			// P1 Winning
-			var upimg = 'img/' + up + '.png';
+			var upimg = '../img/' + up + '.png';
 			if ($('#p1UpNum').attr('src') != upimg){
 				$('#p1UpNum').attr('src', upimg);
 			}
 			$('#p2Dormie').fadeTo(0, 0);
 			
 			if (up + lastHole == 17) {
-				$('#p1Dormie').attr('src', 'img/updormie.png');
+				$('#p1Dormie').attr('src', '../img/updormie.png');
 				$('#p1Dormie').fadeTo(0, 1);
 				$('#square').fadeTo(0, 0);
 				$('#p1Up').fadeTo(0, 0);
@@ -132,7 +132,7 @@ function init(){
 				$('#p1UpNum').fadeTo(0, 0);
 				$('#p2UpNum').fadeTo(0, 0);
 			} else if (up + lastHole > 17) {
-				$('#p1Dormie').attr('src', 'img/dormie.png');
+				$('#p1Dormie').attr('src', '../img/dormie.png');
 				$('#p1Dormie').fadeTo(0, 1);
 				$('#square').fadeTo(0, 0);
 				$('#p1Up').fadeTo(0, 0);
@@ -150,14 +150,14 @@ function init(){
 		} else if (up < 0) {
 			// P2 Winning
 			up = Math.abs(up)
-			var upimg = 'img/' + up + '.png';
+			var upimg = '../img/' + up + '.png';
 			if ($('#p2UpNum').attr('src') != upimg){
 				$('#p2UpNum').attr('src', upimg);
 			}
 			$('#p1Dormie').fadeTo(0, 0);
 			
 			if (up + lastHole == 17) {
-				$('#p2Dormie').attr('src', 'img/updormie.png');
+				$('#p2Dormie').attr('src', '../img/updormie.png');
 				$('#p2Dormie').fadeTo(0, 1);
 				$('#square').fadeTo(0, 0);
 				$('#p1Up').fadeTo(0, 0);
@@ -165,7 +165,7 @@ function init(){
 				$('#p1UpNum').fadeTo(0, 0);
 				$('#p2UpNum').fadeTo(0, 0);
 			} else if (up + lastHole > 17) {
-				$('#p2Dormie').attr('src', 'img/dormie.png');
+				$('#p2Dormie').attr('src', '../img/dormie.png');
 				$('#p2Dormie').fadeTo(0, 1);
 				$('#square').fadeTo(0, 0);
 				$('#p1Up').fadeTo(0, 0);
@@ -184,9 +184,9 @@ function init(){
 			// All Square
 			if (lastHole == 18) {
 				// Sudden death!
-				$('#square').attr('src', 'img/sudden-death.png');
+				$('#square').attr('src', '../img/sudden-death.png');
 			} else {
-				$('#square').attr('src', 'img/square.png');
+				$('#square').attr('src', '../img/square.png');
 			}
 			$('#square').fadeTo(0, 1);
 			$('#p1Up').fadeTo(0, 0);

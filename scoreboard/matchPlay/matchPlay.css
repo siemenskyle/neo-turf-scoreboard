@@ -1,5 +1,5 @@
 @font-face {
-    src: url('font/EndlessBossBattleRegular-v7Ey.ttf');
+    src: url('../font/EndlessBossBattleRegular-v7Ey.ttf');
     font-family: "EndlessBossBattle";
 }
 
@@ -24,7 +24,7 @@ body {
     line-height: 45px;
     text-align: center;
     font-size: 28px;
-    background: url(img/namebar.png);
+    background: url(../img/namebar.png);
     filter: drop-shadow(-1px 1px 1px gray);
 }    
 
