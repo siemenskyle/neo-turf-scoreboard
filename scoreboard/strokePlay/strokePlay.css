@@ -89,15 +89,48 @@ body {
     margin-top: 120px;
 }
 
-.scorecard {
+#scorecard {
     width: 575px;
-    height: 295px;
+    height: 437px;
     margin-left: auto;
     margin-right: auto;
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	position:relative;
 }
+	#scorecard.AUSTRALIA {
+		background-image:url(../img/AUSTRALIA.png);
+	}
+	#scorecard.JAPAN {
+		background-image:url(../img/JAPAN.png);
+	}
+	#scorecard.USA {
+		background-image:url(../img/USA.png);
+	}
+	#scorecard.GERMANY {
+		background-image:url(../img/GERMANY.png);
+		
+	}
 
 .score {
-    position: relative;
+    position: absolute;
+	font-size:30px;
+	width: 40px;
+	text-align:center;
+}
+#frontNine, #backNine{width:70px;}
+.score.godlike {
+	color:#f7bd1e;
+}
+.score.nice {
+	color:#ffff63;
+}
+.score.shithappens {
+	color:#9cdeff;
+}
+.score.gitgud {
+	color:#5a96e7;
 }
 #h1p1 {
     left: 99px;
@@ -243,6 +276,7 @@ body {
     left: 45px;
     top: -148px;
 }
+
 .hide {
     display: none;
 }
