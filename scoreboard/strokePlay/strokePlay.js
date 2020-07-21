@@ -61,12 +61,12 @@ function init(){
 	}
 	
 	function setScorecard(scores, pars) {
-		var parPlayed = 0, totalScore = 0;
+		var parPlayed = 0, totalScore = 0, pace = 0;
 		/* Styles */
-		var baseLeft = 94;
-		var baseTop = 271;
+		var baseLeft = 96;
+		var baseTop = 266;
 		var leftIncrement = 42.5;
-		var topIncrement = 110;
+		var topIncrement = 111;
 		
 		for (var i = 0; i <= 17; i++) {
 			// Set scorecard
@@ -79,31 +79,31 @@ function init(){
 				parPlayed += pars[i];
 				
 				if (scores[i] == pars[i] - 1)
-					textClass = 'nice';
+					textClass = 'good';
 				else if (scores[i] < pars[i])
-					textClass = 'godlike';
+					textClass = 'great';
 				else if (scores[i] == pars[i] + 1)
-					textClass = 'shithappens';
+					textClass = 'bad';
 				else if (scores[i] > pars[i])
-					textClass = 'gitgud';
+					textClass = 'poor';
 
 				var holePar = scores[i] - pars[i];
+				pace += holePar;
 				
 				// TODO if (is Single Player) {
 				$('#h'+ hole).html(scores[i]).css({
 					left: ( baseLeft + ( i % 9 ) * leftIncrement ) + 'px',
 					top: ( baseTop + ( hole > 9 ? topIncrement : 0 ) ) + 'px'
-				}).addClass(textClass);
+				}).removeClass('par','poor','good','bad','great').addClass(textClass);
 				
 				
-				if ( hole == 9 || hole == 18)
-				{
+				if ( hole == 9 || hole == 18) {
 					textClass = 'par';
 					
 					if (totalScore < parPlayed)
-						textClass = 'nice';
+						textClass = 'good';
 					else if (totalScore > parPlayed)
-						textClass = 'gitgud';
+						textClass = 'bad';
 					
 					$(hole == 9 ? '#frontNine' : '#backNine').html(totalScore).css({
 						left: ( baseLeft + ( i % 9 ) * leftIncrement + leftIncrement ) + 'px',
@@ -111,14 +111,34 @@ function init(){
 					}).addClass(textClass);
 				}
 					
-				// } else { }
+				// } else { } (multiPlayer)
 			} else {
+				pace += -1;
 				$('#h'+ hole).html('');
 				if ( hole == 9 ) $('#frontNine').html('');
 				if ( hole == 18 ) $('#backNine').html('');
 			}
 		}
-		var abovePar = totalScore - parPlayed;
+		
+		var currentScore = totalScore - parPlayed;
 		// TODO do something with this?
+		if (currentScore == 0) 
+			$('#currentScore').html('EVEN').removeClass('par','poor','good').addClass('par');
+		else if (currentScore > 0)
+			$('#currentScore').html('+' + currentScore).removeClass('par','poor','good').addClass('poor');
+		else
+			$('#currentScore').html(currentScore).removeClass('par','poor','good').addClass('good');
+
+		if (pace > 0) 
+			$('#pace').html('+' + pace);
+		else
+			$('#pace').html(pace);
+
+		if (pace < -15)
+			$('#pace').removeClass(['par','poor','good']).addClass('good');
+		else if (pace > -9)
+			$('#pace').removeClass(['par','poor','good']).addClass('poor');
+		else
+			$('#pace').removeClass(['par','poor','good']).addClass('par');
 	}
 }

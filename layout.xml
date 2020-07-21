@@ -121,5 +121,7 @@
   <spinBox id="stroke.hole17" x="410" y="214" width="42" height="25"/>
   <label x="470" y="199" width="15" height="13">18</label>
   <spinBox id="stroke.hole18" x="460" y="214" width="42" height="25"/>
+
+  <button type="reset" x="200" y="260" width="120" height="23" tooltip="Clear Match Info" id="stroke.reset2" reset="stroke.p1Name,stroke.p1Char,stroke.p2Name,stroke.p2Char,stroke.hole1,stroke.hole2,stroke.hole3,stroke.hole4,stroke.hole5,stroke.hole6,stroke.hole7,stroke.hole8,stroke.hole9,stroke.hole10,stroke.hole11,stroke.hole12,stroke.hole13,stroke.hole14,stroke.hole15,stroke.hole16,stroke.hole17,stroke.hole18">Clear</button>
  </tab>
 </layout>
