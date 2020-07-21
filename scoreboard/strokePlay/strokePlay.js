@@ -29,7 +29,7 @@ function init(){
 	
 	function scoreboard(){
 		// Get data from the streamcontrol json object
-		var course = scObj['stroke.course']; 
+		var course = scObj['stroke.strokeCourse']; 
 		var scores = [];
 		for (var i = 1; i <= 18; i++) {
 			scores.push(parseInt(scObj['stroke.hole'+i]));
@@ -50,7 +50,7 @@ function init(){
 				pars = [4,4,3,5,4,4,5,3,4,4,4,3,4,4,5,3,4,5];
 				break;
 		}
-		// TODO: Update Scorecard image based on course
+		$('#scorecard').attr('class', course);
 		
 		// Update scorecard if it has changed.
 		var stringifiedScores = JSON.stringify(scores);
@@ -61,17 +61,61 @@ function init(){
 	}
 	
 	function setScorecard(scores, pars) {
-		var parPlayed, totalScore = 0;
+		var parPlayed = 0, totalScore = 0;
+		/* Styles */
+		var baseLeft = 94;
+		var baseTop = 271;
+		var leftIncrement = 42.5;
+		var topIncrement = 110;
+		
 		for (var i = 0; i <= 17; i++) {
+			// Set scorecard
+			var hole = i+1;
+			var textClass = 'par';
+			
 			// Set scorecard
 			if (scores[i] != 0) {
 				totalScore += scores[i];
 				parPlayed += pars[i];
+				
+				if (scores[i] == pars[i] - 1)
+					textClass = 'nice';
+				else if (scores[i] < pars[i])
+					textClass = 'godlike';
+				else if (scores[i] == pars[i] + 1)
+					textClass = 'shithappens';
+				else if (scores[i] > pars[i])
+					textClass = 'gitgud';
 
 				var holePar = scores[i] - pars[i];
-				// TODO Put this into the scoreboard somehow
+				
+				// TODO if (is Single Player) {
+				$('#h'+ hole).html(scores[i]).css({
+					left: ( baseLeft + ( i % 9 ) * leftIncrement ) + 'px',
+					top: ( baseTop + ( hole > 9 ? topIncrement : 0 ) ) + 'px'
+				}).addClass(textClass);
+				
+				
+				if ( hole == 9 || hole == 18)
+				{
+					textClass = 'par';
+					
+					if (totalScore < parPlayed)
+						textClass = 'nice';
+					else if (totalScore > parPlayed)
+						textClass = 'gitgud';
+					
+					$(hole == 9 ? '#frontNine' : '#backNine').html(totalScore).css({
+						left: ( baseLeft + ( i % 9 ) * leftIncrement + leftIncrement ) + 'px',
+						top: ( baseTop + ( hole > 9 ? topIncrement : 0 ) ) + 'px'
+					}).addClass(textClass);
+				}
+					
+				// } else { }
 			} else {
-				// TODO ensure this cell is empty on scorecard
+				$('#h'+ hole).html('');
+				if ( hole == 9 ) $('#frontNine').html('');
+				if ( hole == 18 ) $('#backNine').html('');
 			}
 		}
 		var abovePar = totalScore - parPlayed;
