@@ -28,7 +28,7 @@ How to:
 
 - Add the strokePlay.html in the scoreboard/strokePlay folder to your OBS as a browser source
 	- Does not vary in size, just ensure your browser source is large enough for the images
-	- I used Width at 575 and Height at 600 in the browser source
+	- Reccomend Width at 600 and Height at 500 in the browser source
 	
 - Open Up StreamControl.exe and use the "Stroke Play" tab to control it
 

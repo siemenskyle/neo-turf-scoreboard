@@ -64,7 +64,7 @@ function init(){
 		var parPlayed = 0, totalScore = 0, pace = 0;
 		/* Styles */
 		var baseLeft = 96;
-		var baseTop = 266;
+		var baseTop = 269;
 		var leftIncrement = 42.5;
 		var topIncrement = 111;
 		
