@@ -131,8 +131,16 @@ function init(){
 				$('#p2Up').fadeTo(0, 0);
 				$('#p1UpNum').fadeTo(0, 0);
 				$('#p2UpNum').fadeTo(0, 0);
-			} else if (up + lastHole > 17) {
+			} else if (up + lastHole == 18) {
 				$('#p1Dormie').attr('src', '../img/dormie.png');
+				$('#p1Dormie').fadeTo(0, 1);
+				$('#square').fadeTo(0, 0);
+				$('#p1Up').fadeTo(0, 0);
+				$('#p2Up').fadeTo(0, 0);
+				$('#p1UpNum').fadeTo(0, 0);
+				$('#p2UpNum').fadeTo(0, 0);
+			} else if (up + lastHole > 18) {
+				$('#p1Dormie').attr('src', '../img/winner.png');
 				$('#p1Dormie').fadeTo(0, 1);
 				$('#square').fadeTo(0, 0);
 				$('#p1Up').fadeTo(0, 0);
@@ -164,8 +172,16 @@ function init(){
 				$('#p2Up').fadeTo(0, 0);
 				$('#p1UpNum').fadeTo(0, 0);
 				$('#p2UpNum').fadeTo(0, 0);
-			} else if (up + lastHole > 17) {
+			} else if (up + lastHole == 18) {
 				$('#p2Dormie').attr('src', '../img/dormie.png');
+				$('#p2Dormie').fadeTo(0, 1);
+				$('#square').fadeTo(0, 0);
+				$('#p1Up').fadeTo(0, 0);
+				$('#p2Up').fadeTo(0, 0);
+				$('#p1UpNum').fadeTo(0, 0);
+				$('#p2UpNum').fadeTo(0, 0);
+			} else if (up + lastHole > 18) {
+				$('#p2Dormie').attr('src', '../img/winner.png');
 				$('#p2Dormie').fadeTo(0, 1);
 				$('#square').fadeTo(0, 0);
 				$('#p1Up').fadeTo(0, 0);
